@@ -49,3 +49,10 @@
     - name: Access CLI Inventory
       ansible.builtin.debug:
         msg: URL = {{URL}}
+
+- name: Demo for precedence
+  hosts: all
+  tasks:
+    - name: Print URL1
+      ansible.builtin.debug:
+        msg: URL1 = {{URL1}}
