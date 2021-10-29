@@ -35,7 +35,7 @@
 
 ## You can declare variable on tasks, However the scope is only that task.
 
-- name: Demo on Task Variables
+- name: Demo on Inventory Variables
   hosts: all
   tasks:
     - name: Access URL Inventory
