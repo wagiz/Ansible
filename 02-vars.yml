@@ -50,15 +50,22 @@
 #      ansible.builtin.debug:
 #        msg: URL = {{URL}}
 
-- name: Demo for precedence
+#- name: Demo for precedence
+#  hosts: all
+#  vars:
+#    URL1: play.example.com
+#  vars_files:
+#    - sample-vars.yml
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL1 = {{URL1}}
+#      vars:
+#        URL1: task.example.com
+
+- name: Print facts
   hosts: all
-  vars:
-    URL1: play.example.com
-  vars_files:
-    - sample-vars.yml
   tasks:
-    - name: Print URL1
+    - name: Print a fact
       ansible.builtin.debug:
-        msg: URL1 = {{URL1}}
-      vars:
-        URL1: task.example.com
+        msg: "HOST OS = {{ansible_distribution}}"
